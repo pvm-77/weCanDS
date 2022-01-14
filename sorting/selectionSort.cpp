@@ -1,24 +1,23 @@
-
 #include <iostream>
 using namespace std;
-
 int main()
 {
-	int temp;
-    int locationMinElement,iteration,j;
-    const int n=5;
+	
+    int locationMinElement,i,j,temp,n;
     int a[]={3,4,1,2,6};
-    for(iteration=0;iteration<n-1;iteration++)
+    n=5;
+
+    for(i=0;i<n-1;i++)
     {
-        locationMinElement=iteration;
-        for(j=iteration+1;j<n;j++)
-            if(a[j]<a[locationMinElement]);
+        locationMinElement=i;
+        for(j=i+1;j<n;j++)
+            if(a[locationMinElement]>a[j])
                 locationMinElement=j;
             
         
-        temp=a[j];
-        a[j]=a[iteration];
-        a[iteration]=temp;
+        temp=a[i];
+        a[i]=a[locationMinElement];
+        a[locationMinElement]=temp;
             
         
     }
